@@ -5,4 +5,3 @@ class Player(Operations):
         super().__init__()
         self.username = "Pug"
         self.cash = 500
-      

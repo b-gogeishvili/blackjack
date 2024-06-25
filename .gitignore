@@ -1,2 +1,11 @@
+# Python
 .env/
+*.pyc
+__pycache__/
+
+# MAC OS
 .DS_Store
+
+# Editor
+.vscode/
+.idea/

@@ -6,6 +6,7 @@ import random
 def main():
     game = Game(Player(), Computer())
 
+    game.restart()
     game.display_cards()
 
 main()
