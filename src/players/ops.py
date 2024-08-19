@@ -1,12 +1,13 @@
-from display import Card, card_names, suites
+from display import Card, utils
 
 class Operations: 
+    """ This class defines operations necessary for both player and dealer(computer) """
     def __init__(self) -> None:
         self.cards = []
     
     
-    # Returns list because 'Ace' can have two values    
     def calculate_score(self) -> list[int]:
+        """ Calculates overall score and returns list because 'Ace' can have two values """
         score = [0, 0]
         
         for card in self.cards:
@@ -22,15 +23,25 @@ class Operations:
         return score
     
     def hit(self) -> list[int]:
-        from game_ops import get_random_card
-
-        new_card = get_random_card()
+        """ Add another card to the list """
+        new_card = Card.get_random_card()
         self.cards.append(new_card)
-        # display_cards()
-        
-        return calculate_score()
-        
 
-    def stand(self):
-        return calculate_score()
+        return self.calculate_score()
+    
+    def stand(self) -> list[int]:
+        """ Evaluate the winner """
+        return self.calculate_score()
+    
+    def print_cards(self) -> None:
+        """ Evaluate the winner """
+        num_of_cards = len(self.cards)
+        num_of_lines = len(utils.card.split("\n"))
+
+        for line in range(num_of_lines):
+            for i in range(num_of_cards):
+                card_visual_list = self.cards[i].visual().split("\n")
+                print(card_visual_list[line], end=" ")
+                
+            print()
 

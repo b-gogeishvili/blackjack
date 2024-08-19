@@ -1,3 +1,9 @@
+""" General Utilities """
+
+def clear():
+    import os
+    os.system('clear')
+
 card = """
 ┌──────────┐
 │{}{}        │
@@ -6,7 +12,7 @@ card = """
 │          │
 │        {}{}│
 └──────────┘
-"""
+""".strip()
 
 exception = """
 ┌──────────┐
@@ -16,7 +22,7 @@ exception = """
 │          │
 │       {}{}│
 └──────────┘
-"""
+""".strip()
 
 hidden_card = """
 ┌──────────┐
@@ -26,7 +32,7 @@ hidden_card = """
 │▒▒▒▒▒▒▒▒▒▒│
 │▒▒▒▒▒▒▒▒▒▒│
 └──────────┘
-"""
+""".strip()
 
 suites = {
     'Spade': '♠',

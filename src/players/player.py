@@ -1,8 +1,8 @@
 from .ops import Operations
 
 class Player(Operations):
-    def __init__(self) -> None:
+    def __init__(self, name, cash) -> None:
         super().__init__()
-        self.username = "Pug"
-        self.cash = 500
-      
+        self.username = name
+        self.cash = cash
+

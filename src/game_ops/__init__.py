@@ -1,2 +1,2 @@
-from .game import Game, get_random_card
+from .game import Game 
 

@@ -1,11 +1,13 @@
 from game_ops import Game
 from players import Player, Computer
-from display import Card
-import random
+from display import clear
 
-def main():
-    game = Game(Player(), Computer())
+game_is_running = True
 
+while game_is_running:
+    game = Game(Player(name="test", cash=500), Computer())
+
+    print("BlackJack game!!!\n")
     game.display_cards()
 
-main()
+    game_is_running = False
