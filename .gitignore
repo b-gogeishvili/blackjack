@@ -1,11 +1,20 @@
 # Python
 .env/
+<<<<<<< HEAD
 __pypackages__/
 __pychache__/
 *.pyc
 *.so
 *$py.class
 *.py[cod]
+=======
+*.pyc
+__pycache__/
+>>>>>>> 2a7e95bb2e674d2e65b322b078fe160a9b4913cf
 
 # MAC OS
 .DS_Store
+
+# Editor
+.vscode/
+.idea/
