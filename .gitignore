@@ -1,8 +1,11 @@
+# Python
 .env/
-.DS_Store
-.venv/
 __pypackages__/
-*.so
 __pychache__/
+*.pyc
+*.so
 *$py.class
 *.py[cod]
+
+# MAC OS
+.DS_Store
