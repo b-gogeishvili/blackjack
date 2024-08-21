@@ -2,8 +2,9 @@ from display import Card, utils
 
 class Operations: 
     """ This class defines operations necessary for both player and dealer(computer) """
-    def __init__(self) -> None:
+    def __init__(self, name) -> None:
         self.cards = []
+        self.name = name
     
 
     def calculate_score(self) -> list[int]:
@@ -21,11 +22,14 @@ class Operations:
             score[1] += card.score
 
         return score
-
+ 
     def hit(self) -> list[int]:
         """ Add another card to the list """
         new_card = Card.get_random_card()
         self.cards.append(new_card)
+
+        if self.is_busted():
+            pass
 
         return self.calculate_score()
     
@@ -45,5 +49,9 @@ class Operations:
                 
             print()
 
-    def reset_hand(self) -> None:
-        self.cards = []
+    def is_busted(self) -> bool:
+        if min(self.calculate_score()) > 21:
+            return True
+        else:
+            return False
+
