@@ -1,22 +1,28 @@
-from .ops import Operations
+from . import Operations
 from display import Card, utils
 
 class Computer(Operations):
     def __init__(self):
         super().__init__("Computer")
-   
-
-    # TODO: finish the loop to add cards, if applicable
         self.name = "Computer"
-    def stand(self) -> list[int]:
-        """ Add cards to the list if score is 16 or less """
-        new_card = Card.get_random_card()
-        self.cards.append(new_card)
 
-        return self.calculate_score()
+
+    def evaluate(self) -> int:
+        """ Add cards to the list if score is 16 or less """
+        current_score = self.calculate_score()
+        while (current_score < 17):  
+            new_card = Card.get_random_card()
+            self.cards.append(new_card)
+            
+            current_score = self.calculate_score()
+
+            if self.is_busted():
+                return -1
+
+        return current_score
 
     def print_cards(self, is_blackjack : bool = False) -> None:
-        """ Evaluate the winner. Last card is hidden """
+        """ Print cards for the dealer. Last card is hidden """
         num_of_cards = len(self.cards)
         num_of_lines = len(utils.card.split("\n"))
 
@@ -30,3 +36,4 @@ class Computer(Operations):
                 print(card_visual_list[line], end=" ")
                 
             print()
+

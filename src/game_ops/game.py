@@ -15,7 +15,6 @@ class Game:
         self.computer = computer
 
 
-    # TODO: catch blackjack (if score 21)
     def deal(self) -> Tuple[bool, Optional[Operations]]: 
         """ Initialize the game """
         blackjack = (False, None)
@@ -24,8 +23,8 @@ class Game:
                 Card.get_random_card() for _ in range(2)
             ]
 
-            score = side.calculate_score() 
-            if 21 in score and blackjack[0] == False:
+            
+            if side.calculate_score() == 21 and blackjack[0] == False:
                 blackjack = (True, side)
 
         return blackjack
@@ -40,7 +39,7 @@ class Game:
         """ Display cards of all participants (player and dealer) """
         for side in self._sides:
             op = self._sides[side]
-            score = max(op.calculate_score())
+            score = op.calculate_score()
             
             if op.name == "Player":
                 print(f"{side.capitalize()}'s hand <Score: {score}>")
