@@ -10,6 +10,9 @@ def ask_for_continuation():
     else:
         return True
 
+# TODO 1: Make the game playable
+# TODO 2: Add other methods if applicable
+# TODO 3: Review if tests/error handling can be added
 while game_is_running:
     game = Game(Player(name="test", cash=500), Computer())
     
