@@ -1,3 +1,5 @@
+from display import Card
+from exceptions import PlayerBusted
 from . import Operations 
 
 class Player(Operations):
@@ -5,7 +7,16 @@ class Player(Operations):
         super().__init__("Player")
         self.username = name
         self.cash = cash
+   
+    def hit(self) -> int:
+        """ Add another card to the list and returns score """
+        new_card = Card.get_random_card()
+        self.cards.append(new_card)
 
+        if self.is_busted():
+            raise PlayerBusted()
+
+        return self.calculate_score()
 
     def stand(self, computer : "Computer") -> list[int]:
         """

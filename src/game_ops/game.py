@@ -35,7 +35,7 @@ class Game:
             self._sides[side].cards = []
         self.deal()
     
-    def display_cards(self, is_blackjack : bool = False) -> None:
+    def display_cards(self, is_finished : bool = False) -> None:
         """ Display cards of all participants (player and dealer) """
         for side in self._sides:
             op = self._sides[side]
@@ -46,7 +46,7 @@ class Game:
                 self._sides[side].print_cards()
             else:
                 print(f"{side.capitalize()}'s hand")
-                self._sides[side].print_cards(is_blackjack)
+                self._sides[side].print_cards(is_finished)
 
             print()
 

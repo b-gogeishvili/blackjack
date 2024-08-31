@@ -1,4 +1,4 @@
-from display import Card, utils
+from display import  utils
 
 class Operations: 
     """ 
@@ -28,28 +28,8 @@ class Operations:
             score[0] += card.score
             score[1] += card.score
 
-        return max(score) if max(score) < 21 else min(score)
+        return max(score) if max(score) <= 21 else min(score)
  
-    def hit(self) -> int:
-        """ Add another card to the list and returns score """
-        new_card = Card.get_random_card()
-        self.cards.append(new_card)
-
-        if self.is_busted():
-            return -1
-
-        return self.calculate_score()
-    
-    def stand(self, computer : "Computer") -> list[int]:
-        """
-        Evaluate the winner. 
-        Takes 'Computer' as an input and 
-        returns list in the format -> [computer_score, player_score] 
-        """
-        if computer.stand()[0] == -1:
-            return [-1]
-
-        return [self.calculate_score()]
     
     def print_cards(self) -> None:
         """ Print cards on the screen """
