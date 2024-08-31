@@ -8,15 +8,13 @@ class Player(Operations):
         self.username = name
         self.cash = cash
    
-    def hit(self) -> int:
-        """ Add another card to the list and returns score """
+    def hit(self) -> None:
+        """ Add another card to the list """
         new_card = Card.get_random_card()
         self.cards.append(new_card)
 
         if self.is_busted():
             raise PlayerBusted()
-
-        return self.calculate_score()
 
     def stand(self, computer : "Computer") -> list[int]:
         """

@@ -45,7 +45,10 @@ class Game:
                 print(f"{side.capitalize()}'s hand <Score: {score}>")
                 self._sides[side].print_cards()
             else:
-                print(f"{side.capitalize()}'s hand")
+                if is_finished:
+                    print(f"{side.capitalize()}'s hand <Score: {score}>")
+                else:
+                    print(f"{side.capitalize()}'s hand")
                 self._sides[side].print_cards(is_finished)
 
             print()
