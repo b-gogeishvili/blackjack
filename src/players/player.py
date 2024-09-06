@@ -2,6 +2,7 @@ from display import Card
 from exceptions import PlayerBusted
 from . import Operations 
 
+
 class Player(Operations):
     def __init__(self, name, cash) -> None:
         super().__init__("Player")
@@ -16,7 +17,7 @@ class Player(Operations):
         if self.is_busted():
             raise PlayerBusted()
 
-    def stand(self, computer : "Computer") -> list[int]:
+    def stand(self, computer : Operations) -> list[int]:
         """
         Evaluate the winner. 
         Takes 'Computer' as an input and 
