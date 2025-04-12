@@ -1,6 +1,6 @@
-from game_ops import Game
+from game import Game
 from players import Player, Computer
-from display import clear
+from cards import clear
 from exceptions import PlayerBusted, ComputerBusted
 
 import time

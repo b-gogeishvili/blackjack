@@ -1,5 +1,5 @@
 from exceptions import ComputerBusted
-from display import Card, utils
+from cards import Card, utils
 from . import Operations
 
 

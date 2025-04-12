@@ -1,4 +1,4 @@
-from display import Card
+from cards import Card
 from exceptions import PlayerBusted
 from . import Operations 
 

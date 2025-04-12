@@ -1,4 +1,4 @@
-from display import Card
+from cards import Card
 from players import Player, Computer, Operations
 
 from typing import Optional, Tuple
