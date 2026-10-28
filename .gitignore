@@ -1,7 +1,8 @@
 # Python
+.venv/
 .env/
 __pypackages__/
-__pychache__/
+__pycache__/
 *.pyc
 *.so
 *$py.class
@@ -13,3 +14,6 @@ __pychache__/
 # Editor
 .vscode/
 .idea/
+
+# Build
+/build/
